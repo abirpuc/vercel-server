@@ -1,0 +1,17 @@
+{
+    "name": "my-vercel-project",
+    "version": 2,
+    "builds": [
+      { "src": "frontend/**", "use": "@vercel/static" },
+      { "src": "api/**", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "/api/$1" },
+      { "src": "/(.*)", "dest": "/frontend/$1" }
+    ],
+    "env": {
+      "API_KEY": "your-api-key",
+      "NODE_ENV": "production"
+    }
+  }
+  
